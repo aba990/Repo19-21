@@ -1,14 +1,16 @@
 let keys = document.querySelectorAll('.keys');
 let spaceKey = document.querySelector('.space_key');
 let shift_left = document.querySelector('.shift_left');
+let shift_right = document.querySelector('.shift_right');
+let caps_lock_key = document.querySelector('.caps_lock_key');
 let body = document.querySelector('body');
-let text_input = document.querySelector('.text');
-let keyboard_lights = document.querySelector('.keyboard_lights');
+let change_color = document.querySelector('.change_light_color');
+let colors_input = document.querySelector('.colors_input');
 let keyboard_wrapp = document.querySelector('.keyboard_wrapp');
 
 for(let i = 0; i < keys.length; i++) {
     keys[i].setAttribute('keyname', keys[i].innerText);
-    keys[i].setAttribute('lowerCaseName', keys[i].innerText.toLowerCase());
+    keys[i].setAttribute('lowerCaseName', keys[i].innerText.toUpperCase());
 }
 
 window.addEventListener('keydown', function(e) {
@@ -40,10 +42,6 @@ window.addEventListener('keyup', function(e) {
         if(e.code == 'Space') {
             spaceKey.classList.remove('active');
             spaceKey.classList.add('remove');
-        }
-        if(e.code == 'ShiftLeft') {
-            shift_right.classList.remove('active')
-            shift_right.classList.remove('remove')
         }
         if(e.code == 'ShiftRight') {
             shift_left.classList.remove('active')
